@@ -1,0 +1,8 @@
+[codestyle]
+workspace_dir='.'
+lang='cpp'
+indent_width=4
+template_file='./config/custom_template.cpp'
+
+[etc]
+parallel_download=false
