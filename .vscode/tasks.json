@@ -1,41 +1,44 @@
 {
     "version": "2.0.0",
-    "tasks": [{
-        "type": "shell",
-        "label": "g++ build active file",
-        "command": "/usr/local/bin/gcc-9",
-        "args": [
-          "-std=gnu++17",
-          "-g",
-          "-Wall",
-          "-lstdc++",
-          "-Wunused-result",
-          "${file}",
-          "-o",
-          "${fileDirname}/${fileBasenameNoExtension}"
-        ],
-        "problemMatcher": [
-          "$gcc"
-        ],
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        }
-      },
-      {
-        "type": "shell",
-        "label": "atcoder test active file",
-        "command": "pipenv",
-        "args": [
-          "run",
-          "atcoder-tools",
-          "test",
-          "-d",
-          "${fileDirname}"
-        ],
-        "group": "build",
-        "problemMatcher": [],
-        "dependsOn": ["g++ build active file"]
-      }
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "g++ build active file",
+            "command": "/usr/local/bin/gcc-9",
+            "args": [
+                "-std=gnu++17",
+                "-g",
+                "-Wall",
+                "-lstdc++",
+                "-Wunused-result",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        },
+        {
+            "type": "shell",
+            "label": "atcoder test active file",
+            "command": "pipenv",
+            "args": [
+                "run",
+                "atcoder-tools",
+                "test",
+                "-d",
+                "${fileDirname}"
+            ],
+            "group": "build",
+            "problemMatcher": [],
+            "dependsOn": [
+                "g++ build active file"
+            ]
+        },
     ]
-  }
+}
