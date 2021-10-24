@@ -1,5 +1,9 @@
 # AtCoder
 
+## Quick-links
+- [AtCoder](https://atcoder.jp)
+- [AtCoder Problems Progress](https://kenkoooo.com/atcoder/#/table/yifanwu)
+
 ## Requirements
 
 - gcc 9
@@ -14,24 +18,14 @@ $ pipenv shell
 
 ## Usage
 
-New contest
-
-```sh
-$ atcoder-tools gen {contest_id} --without-login --workspace ./contests/ --config ./config/atcodertools.toml
-```
+### New contest
 
 ```sh
 $ pipenv run at-gen {contest_id}
 ```
 
-Compile single task
+### Compile & test single task
 
 ```sh
-$ gcc-9 -std=gnu++17 -g -Wall -lstdc++ -Wunused-result ./contests/agc001/A/main.cpp -o ./contests/agc001/A/main
-```
-
-Test single task
-
-```sh
-$ atcoder-tools test -d ./agc001/A
+$ pipenv run test contests/abc086/D
 ```
