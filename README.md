@@ -29,3 +29,9 @@ $ pipenv run at-gen {contest_id}
 ```sh
 $ pipenv run test contests/abc086/D
 ```
+
+### Submit single task
+
+```sh
+$ pipenv run submit contests/abc086/D
+```

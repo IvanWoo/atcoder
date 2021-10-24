@@ -18,3 +18,4 @@ allow_prereleases = true
 [scripts]
 at-gen = "atcoder-tools gen --without-login --workspace ./contests/ --config ./config/atcodertools.toml"
 test = "bash ./scripts/command/test.sh"
+submit = "bash ./scripts/command/submit.sh"
