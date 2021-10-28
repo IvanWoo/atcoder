@@ -22,27 +22,16 @@ using PLL = pair<LL, LL>;
 
 void solve(long long N, long long W, std::vector<long long> w, std::vector<long long> v)
 {
-    VVLL dp(N + 1, VLL(W + 1));
-    for (int i = 0; i <= N; i++)
+    VLL dp(W + 1, 0);
+    for (int i = 0; i < N; i++)
     {
-        for (int j = 0; j <= W; j++)
+        for (int j = W; j >= w[i]; j--)
         {
-            if (i == 0 || j == 0)
-            {
-                dp[i][j] = 0;
-            }
-            else if (w[i - 1] <= j)
-            {
-                dp[i][j] = max(dp[i - 1][j], v[i - 1] + dp[i - 1][j - w[i - 1]]);
-            }
-            else
-            {
-                dp[i][j] = dp[i - 1][j];
-            }
+            dp[j] = max(dp[j], v[i] + dp[j - w[i]]);
         }
     }
 
-    printf("%lld\n", dp[N][W]);
+    cout << dp[W] << endl;
 }
 
 int main()
