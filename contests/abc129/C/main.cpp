@@ -20,29 +20,44 @@ using VVLL = vector<VLL>;
 using PII = pair<int, int>;
 using PLL = pair<LL, LL>;
 
-void solve(long long N, std::vector<long long> h)
+const long long MOD = 1000000007;
+
+// basically a fib sequence with broken steps
+void solve(long long N, long long M, std::vector<long long> a)
 {
-    const LL INF = 1LL << 60;
-    VLL dp(N, INF);
-    dp[0] = 0;
-    for (int i = 1; i < N; i++)
+    VLL dp(N + 1, 0);
+    // broken steps
+    set<LL> brokens;
+    for (int i = 0; i < M; i++)
     {
-        chmin(dp[i], dp[i - 1] + abs(h[i] - h[i - 1]));
-        if (i > 1)
-            chmin(dp[i], dp[i - 2] + abs(h[i] - h[i - 2]));
+        brokens.insert(a[i]);
     }
-    printf("%lld\n", dp[N - 1]);
+
+    dp[0] = 1;
+
+    for (int i = 1; i <= N; i++)
+    {
+        if (brokens.count(i))
+            continue;
+        if (!brokens.count(i - 1))
+            dp[i] = (dp[i] + dp[i - 1]) % MOD;
+        if (i > 1 && !brokens.count(i - 2))
+            dp[i] = (dp[i] + dp[i - 2]) % MOD;
+    }
+    cout << dp[N] << endl;
 }
 
 int main()
 {
     long long N;
     std::scanf("%lld", &N);
-    std::vector<long long> h(N);
-    for (int i = 0; i < N; i++)
+    long long M;
+    std::scanf("%lld", &M);
+    std::vector<long long> a(M);
+    for (int i = 0; i < M; i++)
     {
-        std::scanf("%lld", &h[i]);
+        std::scanf("%lld", &a[i]);
     }
-    solve(N, std::move(h));
+    solve(N, M, std::move(a));
     return 0;
 }
