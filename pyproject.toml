@@ -29,5 +29,6 @@ dev = []
 
 [tool.pdm.scripts]
 at-gen = "atcoder-tools gen --without-login --workspace ./contests/ --config ./config/atcodertools.toml"
+new = "pdm run at-gen"
 test = "bash ./scripts/command/test.sh"
 submit = "bash ./scripts/command/submit.sh"

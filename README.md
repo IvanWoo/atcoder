@@ -7,7 +7,7 @@
 
 ## Requirements
 
-- gcc 9
+- gcc 13
 - pdm
 
 ## Setup
@@ -21,7 +21,7 @@ $ pdm install
 ### New contest
 
 ```sh
-$ pdm run at-gen {contest_id}
+$ pdm run new {contest_id}
 ```
 
 ### Compile & test single task

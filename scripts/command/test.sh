@@ -14,7 +14,7 @@ TASK_DIR="${PROJECT_DIR}/${TASK}"
 
 build() {
     printf "Build ${TASK}... \n"
-    gcc-12 -std=gnu++17 -g -Wall -lstdc++ -Wunused-result "${TASK_DIR}/main.cpp" -o "${TASK_DIR}/main"
+    gcc-13 -std=gnu++17 -g -Wall -lstdc++ -Wunused-result "${TASK_DIR}/main.cpp" -o "${TASK_DIR}/main"
 }
 
 test() {
