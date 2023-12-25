@@ -4,7 +4,7 @@
         {
             "type": "shell",
             "label": "g++ build active file",
-            "command": "/usr/local/bin/gcc-9",
+            "command": "/opt/homebrew/bin/gcc-12",
             "args": [
                 "-std=gnu++17",
                 "-g",
@@ -26,7 +26,7 @@
         {
             "type": "shell",
             "label": "atcoder test active file",
-            "command": "pipenv",
+            "command": "pdm",
             "args": [
                 "run",
                 "atcoder-tools",

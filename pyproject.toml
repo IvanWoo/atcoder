@@ -1,0 +1,33 @@
+[project]
+name = "atcoder"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Yifan Wu",email = "tyivanwu@gmail.com"},
+]
+dependencies = [
+    "black",
+    "atcoder-tools",
+    "markupsafe==2.0.0",
+]
+requires-python = ">=3.9.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+package-type = "application"
+allow_prereleases = true
+
+[[tool.pdm.source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[tool.pdm.dev-dependencies]
+dev = []
+
+[tool.pdm.scripts]
+at-gen = "atcoder-tools gen --without-login --workspace ./contests/ --config ./config/atcodertools.toml"
+test = "bash ./scripts/command/test.sh"
+submit = "bash ./scripts/command/submit.sh"

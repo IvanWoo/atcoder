@@ -7,7 +7,7 @@
             ],
             "defines": [],
             "macFrameworkPath": [],
-            "compilerPath": "/usr/local/bin/gcc-9",
+            "compilerPath": "/opt/homebrew/bin/gcc-12",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "gcc-x64"
